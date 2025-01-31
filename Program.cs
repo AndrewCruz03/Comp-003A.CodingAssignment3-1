@@ -1,4 +1,9 @@
-﻿using System.ComponentModel.Design;
+﻿// Author: Andrew Cruz Pacheco
+// Course: COMP-003A
+// Faculty: Jonathan Cruz
+// Purpose: Budget management application demonstarting control flow.
+
+using System.ComponentModel.Design;
 using System.Transactions;
 
 namespace Comp_003A.CodingAssignment3_1
