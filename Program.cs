@@ -1,4 +1,9 @@
-﻿using System.ComponentModel.Design;
+﻿// Author: Andrew Cruz Pacheco
+// Course: COMP-003A
+// Faculty: Jonathan Cruz
+// Purpose: Budget management application demonstarting control flow.
+
+using System.ComponentModel.Design;
 using System.Transactions;
 
 namespace Comp_003A.CodingAssignment3_1
@@ -7,13 +12,16 @@ namespace Comp_003A.CodingAssignment3_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Budget Management");
-            Console.WriteLine("Enter your monthly income: ");
-            int income = int.Parse(Console.ReadLine());
-
-
             int choice;
-            int budget;
+            double budget = 0;
+            string expenseName1 = "";
+            double expenseAmount1 = 0;
+
+            Console.WriteLine("Welcome to the Budget Management Tool!\n");
+            Console.Write("Enter your monthly income:  ");
+            budget = double.Parse(Console.ReadLine());
+
+
 
             while (true)
             {
@@ -21,31 +29,36 @@ namespace Comp_003A.CodingAssignment3_1
 
                 Console.WriteLine("1. Add an expense");
                 Console.WriteLine("2. View expenses and budget");
-                Console.WriteLine("3. Remove an expense");
+                Console.WriteLine("3. Remove an expense"); 
                 Console.WriteLine("4. Exit");
                 Console.Write("Enter your choice: ");
                 choice = int.Parse(Console.ReadLine());
 
-
+                
                 if (choice == 1)
                 {
-                    Console.WriteLine("Enter the expense name: ");
-                    Console.ReadLine(); 
-                    Console.WriteLine("Enter the Expense amount: ");
-                    int num = int.Parse(Console.ReadLine());
-                   
+                                                         // Expense name and amount work need to store more than 1
+
+                    Console.Write("\nEnter an expense name: ");
+                    expenseName1 = Console.ReadLine();
+                    Console.Write("Enter an amount: ");
+                    expenseAmount1 = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine($"Expense added sucessfully!\n");
+
                 }
-
-
-
 
 
 
 
                 else if (choice == 2) 
                 {
-                    Console.WriteLine("Total Expenses: ");
-                    Console.WriteLine("Remaing Budget: ");
+                    Console.WriteLine("\nExpenses:");
+                    Console.WriteLine($"- {expenseName1}: ${expenseAmount1:F2} ");
+                    Console.WriteLine($"Total Expenses: ${expenseAmount1}");
+
+                    double RemaingBudget = (budget - expenseAmount1);
+                    Console.WriteLine($"Remaining Budget: ${RemaingBudget}\n");
 
                 }
 
@@ -53,8 +66,16 @@ namespace Comp_003A.CodingAssignment3_1
 
                 else if (choice == 3)
                 { 
-                    Console.WriteLine("Enter the name of the expense to remove: ");
-                    Console.WriteLine("Expense removed successfully");
+                    Console.WriteLine("\nEnter the name of the expense to remove: ");
+
+
+
+
+
+
+                    Console.WriteLine("Expense removed successfully!\n");
+
+
                 }
 
 
@@ -63,7 +84,7 @@ namespace Comp_003A.CodingAssignment3_1
                     Console.WriteLine("\n\nGoodbye!"); break;
                 }
 
-                else { Console.WriteLine("\nInvalid input"); }
+                else { Console.WriteLine("\nInvalid input\n"); }
                
 
             }
