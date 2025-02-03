@@ -16,7 +16,7 @@ namespace Comp_003A.CodingAssignment3_1
             double budget ;
             string expenseName1 = "";
             double expenseAmount1 = 0;
-            double removeExpense = 0;             //   wont work cuz ones a string and oter is a double
+            double removeExpense = 0;             //   wont work cuz ones a string and oter is a double (fixed)
 
             Console.WriteLine("Welcome to the Budget Management Tool!\n");
             Console.Write("Enter your monthly income:  ");
@@ -49,7 +49,7 @@ namespace Comp_003A.CodingAssignment3_1
 
 
                 else if (choice == 2) 
-                {                                                   // done for now need to create room  for other expenses
+                {                                                   // done
                     Console.WriteLine("\nExpenses:");
                     Console.WriteLine($"- {expenseName1}: ${expenseAmount1:F2} ");
                     Console.WriteLine($"Total Expenses: ${expenseAmount1}");
